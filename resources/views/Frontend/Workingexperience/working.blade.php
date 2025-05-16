@@ -108,6 +108,25 @@
 
                                                             </div>
 
+                                                            <span class="title-achievement">Tools/Software yang
+                                                                digunakan :</span>
+
+                                                            <div class="jobdesc-content">
+
+                                                                <p class="jobdesc-p">
+                                                                    @if ($work->software_tools == null)
+                                                                        -
+                                                                    @else
+                                                                        @foreach ($software_tools as $item)
+                                                                            <li>{{ $item }}.</li>
+                                                                        @endforeach
+                                                                    @endif
+
+                                                                </p>
+
+
+                                                            </div>
+
                                                         </div>
 
                                                     </div>

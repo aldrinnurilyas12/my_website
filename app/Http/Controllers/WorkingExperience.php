@@ -72,10 +72,13 @@ class WorkingExperience extends Controller
         $description = $working->first()->job_description;
         $job_desc = array_filter(array_map('trim', explode('.', $description)));
 
-
         $achivements = $working->first()->achievement;
         $achive = array_filter(array_map('trim', explode('.', $achivements)));
-        return view('frontend.workingexperience.working', compact('working', 'job_desc', 'achive'));
+
+        $software = $working->first()->software_tools;
+        $software_tools = array_filter(array_map('trim', explode('.', $software)));
+
+        return view('frontend.workingexperience.working', compact('working', 'job_desc', 'achive', 'software_tools'));
     }
 
     /**
