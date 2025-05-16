@@ -1,0 +1,643 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+body {
+    padding: 15px;
+   margin: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensures the body takes up the full viewport height */
+    font-family: "DM Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    box-sizing: border-box;
+    overflow: hidden;
+    background-color: #f8f9fa;
+}
+
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+img.profile-picture{
+    width: 150px;
+    height: 150px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    border-radius: 50%;
+    border: 5px solid rgb(246, 255, 0);
+    cursor: pointer;
+}
+
+
+img.profile-picture-post{
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+}
+
+.subtitle {
+    
+    color: #6c757d;
+    font-style: italic;
+    margin-top: 10px;
+    position: relative;
+    border-right: 2px solid rgba(255,255,255,.75);
+    font-size: 0.9rem;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(-50%);   
+}
+.name {
+    font-size: 40px;
+    font-weight: 500;
+    margin: 5px;
+}
+
+.main-menu {
+    margin-top: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li{
+    margin-top: 10px;
+}
+
+li a{
+    color: black;
+    font-size: 16px;
+    margin-top: 10px;
+
+}
+
+li a:hover {
+    text-decoration: underline;
+    color: #ff0090;
+}
+
+img.link-href {
+    width: 20px;
+}
+
+.icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.icons img{
+    width: 20px;
+    height: 20px;
+}
+
+
+
+.back {
+    display: flex;
+    justify-content: center; /* Memposisikan link di tengah parent div */
+    margin-top: 20px; /* opsional */
+}
+
+.back a {
+    display: flex;
+    align-items: center; /* Posisikan teks dan gambar secara vertikal sejajar */
+    border: 1px solid #000000;
+    padding: 6px 10px;
+    font-size: 15px;
+    color: black;
+    text-decoration: none;
+    gap: 8px; /* Jarak antara gambar dan teks */
+    border-radius: 4px; /* opsional, tampilan lebih halus */
+}
+
+img.back-btn {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+
+
+/* DAILY POST CSS */
+
+.body-daily-post {
+    width: 100%;
+    min-height: 100vh; /* Ensures the body takes up the full viewport height */
+    font-family: "DM Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    box-sizing: border-box;
+    overflow: hidden;
+    align-items: baseline;
+    background-color: #f8f9fa;
+}
+
+
+.main-post{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin: 0;
+}
+
+.main-daily-post {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+   
+}
+
+.title-time{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.time{
+    font-size: 13px;
+    color: gray;
+}
+
+.dotted {
+    color: gray;
+}
+
+
+.title-content h1 {
+    font-weight: 500;
+}
+
+.content-daily-post{
+    width: 70%;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 100px;
+    align-items: baseline;
+    text-align: left;
+}
+
+.dflex-title{
+    width: 100%;
+    font-size: 20px;
+    font-weight: 500;
+    margin: 5px;
+    display: flex; 
+    justify-content: space-between;
+    align-items: baseline;
+    position: sticky;
+}
+
+.title {
+      width: 100%;
+    display: block;
+}
+
+.title-name-time{
+    display: flex;
+    align-items: center;
+}
+
+h5.card-title{
+    margin: 0;
+}
+
+.card-post {
+    height: inherit;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.content-wrap {
+    height: 25em;
+
+}
+
+p.text-post{
+    font-size: 15px;
+    margin: 8px 0 10px 0;
+    height: max-content;
+    font-weight: 400;;
+}
+
+hr.hr-post{
+    width: 100%;
+    border: 0.2px solid #d5d5d5;
+    margin: 10px 0;
+}
+
+
+.card-body{
+    display: flex;
+    gap: 20px;
+}
+
+.content-daily{
+    display: block;
+}
+
+.dflex-title{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+
+/* PROJECT PAGE STYLE */
+
+
+.projects-title{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content:start;
+    align-items: center;
+}
+
+.main-title{
+    display: block;
+}
+
+.job-title {
+    font-size:12px;
+    color: rgb(0, 0, 0);
+}
+
+.content-flex-job{
+    display: flex;
+    gap:6px;
+    align-items: center;
+}
+
+img.project-img {
+    width: 150px;
+    height: 150px;
+}
+
+h5.title-project{
+     width: 100%;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom:8px;
+    margin-top: 0;
+}
+
+p.description{
+    width: 40rem;
+    font-size: 14px;
+    margin: 10px 0 10px 0;
+    height: max-content;
+    font-weight: 400;
+    display: -webkit-box;
+    -webkit-line-clamp: 6;        /* Batasi ke 4 baris */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+p.project_date{
+    font-size:12px;
+    color: gray;
+}
+
+.wrap-content{
+    display: block;
+}
+
+.introduction {
+    height: max-content;
+    margin-bottom: 10px;
+}
+
+p.intro-description{
+    width:100%;
+    font-size: 14px;
+    height: max-content;
+    font-weight: 400;
+    margin: 8px 0 0 0 ;
+}
+
+h4.intro-title{
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0;
+}
+.link-project{
+    text-decoration: underline;
+    color: black;
+} 
+
+.link-project:hover{
+    color: #ff0090;
+}
+
+.project-category span{
+    padding: 3px;
+    font-size: 13px;
+    flex-wrap: wrap;
+    border-radius: 5px;
+    border: 1px solid black;
+    align-content: center;
+}
+
+.project-date {
+    display: flex;
+    gap: 4px;
+    font-size: 12px;
+    color: gray;
+}
+
+.project-category{
+    width: max-content;
+    display: flex;
+    flex-wrap: wrap;
+    gap:8px;
+}
+
+img.github-link-projects{
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-content: center;
+}
+
+/* END */
+
+/* SHAIRNG BOOKS CSS */
+
+.center-content {
+    display: block;
+    padding: 10px;
+    text-align: center;
+    align-items: center;
+}
+
+.sharing-books-main {
+    overflow: auto;
+}
+
+img.img-books {
+    width: 300px;
+    height: 500px;
+}
+
+p.opinion {
+    width: 50em;
+    font-size:14px;
+}
+
+span.opinion {
+    font-weight: 800;
+}
+
+
+/* END */
+
+/* WORKING EXPERIENCE CSS */
+
+.company-name {
+    display: flex;
+    gap:10px;
+    height: max-content;
+}
+
+.company-name h5{
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.title-company-name {
+    display: block;
+    height: max-content;
+    margin-bottom: 20px;
+}
+
+.dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #ff0090;
+    display: flex;
+    justify-content: center;
+}
+
+.dot-content {
+    display: flex;
+    justify-content: center;
+}
+
+.vertical-line{
+    width: 2px;
+    margin-left: 10px;
+    background-color: rgb(232, 232, 232);
+    height: max-content;
+    align-items: center;
+    position: sticky;
+}
+
+.vertical-list {
+    display: block;
+    margin-bottom:20px;
+}
+
+p.jobdesc-p {
+    font-size: 12px;
+}
+
+.jobdesc-content {
+    margin-left: 20px;
+    height: max-content;
+}
+
+
+.job-desc {
+    width: 400px;
+    height: max-content;
+    display: block;
+}
+
+.title-jobdesc {
+    width: max-content;
+    font-size: 12px;
+    margin-top: 40px;
+    margin-left: 20px;
+    position: absolute;
+    text-decoration: underline;
+}
+
+.title-achievement {
+     margin-left: 20px;
+      font-size: 12px;
+    text-decoration: underline;
+}
+p.date {
+    width: 50px;
+    font-size: 12px;
+    color: gray;
+}
+
+ul {
+    line-height: 90%;
+    list-style-type: none;
+}
+
+li {
+    width: 100%;
+    font-size: 12px;
+    align-items: center;
+}
+
+.main-title-work-experience {
+    width: max-content;
+    display: flex;
+    gap:6px;
+    padding: 10px;
+    height: max-content;
+    border-radius: 10px;
+    
+}
+
+.list-jobdesc {
+    height: max-content;
+}
+
+span.industry {
+    padding:3px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    font-size :12px;
+}
+
+.alert {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: rgb(255, 234, 208);
+    color: black;
+}
+
+
+/* END */
+
+.typewriter-animation {
+    animation: 
+      typewriter 0.5s steps(50) 1s 1 normal both, 
+      blinkingCursor 500ms steps(50) infinite normal;
+  }
+  @keyframes typewriter {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  @keyframes blinkingCursor{
+    from { border-right-color: rgba(255,255,255,.75); }
+    to { border-right-color: transparent; }
+  }
+/* Responsive styles */
+
+
+@media only screen and (max-width: 475px) {
+    .body-daily {
+        width: 100%;
+    }
+
+    .content-daily-post{
+    width: 100%;
+    font-size: 20px;
+    font-weight: 500;
+    margin: 5px;
+    align-items: baseline;
+    text-align: left;
+    }
+
+    
+.title-content h1 {
+    font-size: 20px;
+}
+    
+
+    img.project-img {
+        width: 100px;
+        height: 100px;
+    }
+    
+    h5.title-project{
+        width: 100%;
+        font-size: 15px;
+        font-weight: 500;
+        margin-bottom: 5px;
+    }
+    
+    p.description{
+        width: 15rem;
+        font-size: 13px;
+        margin: 8px 0 10px 0;
+        height: max-content;
+        font-weight: 400;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;        /* Batasi ke 4 baris */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .projects-title{
+        padding: 5px;
+        gap: 2rem;
+    }
+
+    .category span{
+        padding: 3px;
+        font-size: 11px;
+        border-radius: 5px;
+        border: 1px solid black;
+    }
+
+    p.intro-description{
+        width: 100%;
+        font-size: 12px;
+        height: max-content;
+        font-weight: 400;
+        margin: 8px 0 0 0 ;
+    }
+
+   .card-post {
+    height: inherit;
+    overflow-y: auto;
+    overflow-x: hidden;
+   }
+
+   img.img-books {
+    width:200px;
+    height: 200px;
+   }
+
+   p.opinion {
+    width:100%;
+    font-size: 13px;
+   }
+   
+}
+
+
