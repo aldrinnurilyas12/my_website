@@ -59,7 +59,7 @@
         </div>
     </div>
 
-    {{-- CREATE POSTS MODAL --}}
+    {{-- CREATE PROJECT MODAL --}}
 
     <div class="modal fade" id="createPostModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
         aria-hidden="true">
@@ -120,6 +120,11 @@
                         </div>
 
                         <div class="form-group">
+                            <label><strong>Link Demo</strong></label>
+                            <input name="demo_project_link" class="form-control" type="text">
+                        </div>
+
+                        <div class="form-group">
                             <label><strong>Tanggal Mulai Project</strong></label>
                             <input name="start_date" class="form-control" type="date">
                         </div>
@@ -139,6 +144,10 @@
                             </select>
                         </div>
 
+                        <div class="form-group">
+                            <label><strong>Contributors (opsional)</strong></label>
+                            <input name="contributors" class="form-control" type="text">
+                        </div>
 
                         <div class="form-group">
                             <label><strong>Upload Gambar (Opsional)</strong></label>
@@ -158,7 +167,7 @@
     </div>
 
     {{-- END --}}
-    <!-- Modal -->
+    <!--  UPDATE PROJECTS Modal -->
     @foreach ($projects as $project)
         <div class="modal fade" id="projectModal{{ $project->id }}" tabindex="-1" role="dialog"
             aria-labelledby="exampleModalCenterTitle{{ $project->id }}" aria-hidden="true">
@@ -193,6 +202,12 @@
                                 <label><strong>Link Github</strong></label>
                                 <input name="github_link" value="{{ $project->github_link }}" class="form-control"
                                     type="text">
+                            </div>
+
+                            <div class="form-group">
+                                <label><strong>Link Demo</strong></label>
+                                <input name="demo_project_link" value="{{ $project->demo_project_link }}"
+                                    class="form-control" type="text">
                             </div>
 
                             <div class="form-group">
@@ -253,6 +268,12 @@
                                         Revisi/Tinjau Ulang</option>
                                 </select>
 
+                            </div>
+
+                            <div class="form-group">
+                                <label><strong>Contributors (opsional)</strong></label>
+                                <input name="contributors" value="{{ $project->contributors }}" class="form-control"
+                                    type="text">
                             </div>
 
 

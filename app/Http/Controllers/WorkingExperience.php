@@ -69,16 +69,7 @@ class WorkingExperience extends Controller
     {
         $working = DB::table('work_view')->orderBy('created_at', 'desc')->get();
 
-        $description = $working->first()->job_description;
-        $job_desc = array_filter(array_map('trim', explode('.', $description)));
-
-        $achivements = $working->first()->achievement;
-        $achive = array_filter(array_map('trim', explode('.', $achivements)));
-
-        $software = $working->first()->software_tools;
-        $software_tools = array_filter(array_map('trim', explode('.', $software)));
-
-        return view('frontend.workingexperience.working', compact('working', 'job_desc', 'achive', 'software_tools'));
+        return view('frontend.workingexperience.working', compact('working'));
     }
 
     /**

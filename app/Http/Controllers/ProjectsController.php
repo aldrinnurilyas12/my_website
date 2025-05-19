@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use App\Models\ProjectsModel;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
+use Ramsey\Uuid\Uuid;
+use Illuminate\Support\Str;
+use Illuminate\View\View;
 
 class ProjectsController extends Controller
 {
@@ -39,6 +42,13 @@ class ProjectsController extends Controller
         return view('frontend.projectspage.projects', compact('projects'));
     }
 
+
+    public function displayproject(string $id, Request $request): View
+    {
+        $project_data = DB::table('project_view')->where('project_code', $request->project_code)->get();
+        return view('frontend.projectspage.show_project', compact('project_data'));
+    }
+
     public function create()
     {
         //
@@ -67,13 +77,16 @@ class ProjectsController extends Controller
 
             ProjectsModel::create([
                 'project_name' => $request->project_name,
+                'project_code' => Uuid::uuid4()->toString(),
                 'description' => $request->description,
                 'category_id' => $request->category_id,
                 'github_link' => $request->github_link,
+                'demo_project_link' => $request->demo_project_link,
                 'start_date' => $request->start_date,
                 'end_date' => $request->end_date,
                 'project_status' => $request->project_status,
-                'tools' => implode(', ', $request->tools)
+                'tools' => implode(', ', $request->tools),
+                'contributors' => $request->contributors
             ]);
 
             ProjectMediaModel::create([
@@ -83,7 +96,21 @@ class ProjectsController extends Controller
             session()->flash('message_success', 'Berhasil menambahkan project');
             return redirect()->back();
         } else {
-            session()->flash('failed_message', 'Gagal menambahkan project anda, silahkan coba lagi');
+            ProjectsModel::create([
+                'project_name' => $request->project_name,
+                'project_code' => Uuid::uuid4()->toString(),
+                'description' => $request->description,
+                'category_id' => $request->category_id,
+                'github_link' => $request->github_link,
+                'demo_project_link' => $request->demo_project_link,
+                'start_date' => $request->start_date,
+                'end_date' => $request->end_date,
+                'project_status' => $request->project_status,
+                'tools' => implode(', ', $request->tools),
+                'contributors' => $request->contributors
+            ]);
+
+            session()->flash('message_success', 'Berhasil menambahkan project');
             return redirect()->back();
         }
     }
@@ -131,10 +158,12 @@ class ProjectsController extends Controller
                 'description' => $request->description,
                 'category_id' => $request->category_id,
                 'github_link' => $request->github_link,
+                'demo_project_link' => $request->demo_project_link,
                 'start_date' => $request->start_date,
                 'end_date' => $request->end_date,
                 'project_status' => $request->project_status,
                 'tools' => implode(', ', $request->tools),
+                'contributors' => $request->contributors,
                 'updated_at' => now()
             ]);
 
@@ -158,10 +187,12 @@ class ProjectsController extends Controller
                 'description' => $request->description,
                 'category_id' => $request->category_id,
                 'github_link' => $request->github_link,
+                'demo_project_link' => $request->demo_project_link,
                 'start_date' => $request->start_date,
                 'end_date' => $request->end_date,
                 'project_status' => $request->project_status,
                 'tools' => implode(', ', $request->tools),
+                'contributors' => $request->contributors,
                 'updated_at' => now()
             ]);
         }

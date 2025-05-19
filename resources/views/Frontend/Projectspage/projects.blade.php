@@ -52,7 +52,8 @@
                                 <div class="projects-title">
                                     <div class="main-title">
                                         <h5 class="title-project">
-                                            <a class="link-project" href="#">{{ $project->project_name }}</a>
+                                            <a class="link-project"
+                                                href="{{ route('displayproject', $project->project_code) }}">{{ $project->project_name }}</a>
                                         </h5>
 
                                         <div class="project-category">
@@ -62,7 +63,17 @@
                                                 <span class="github-link">
                                                     <a href="{{ $project->github_link }}" target="_blank">
                                                         <img class="github-link-projects"
-                                                            src="{{ asset('icon/github.png') }}" alt="github-links">
+                                                            src="{{ asset('icon/github.png') }}" title="github-links">
+                                                    </a>
+                                                </span>
+                                            @else
+                                            @endif
+
+                                            @if ($project->demo_project_link)
+                                                <span class="github-link">
+                                                    <a href="{{ $project->demo_project_link }}" target="_blank">
+                                                        <img class="github-link-projects"
+                                                            src="{{ asset('icon/globe.png') }}" title="demo project">
                                                     </a>
                                                 </span>
                                             @else
@@ -89,8 +100,13 @@
                                     </div>
 
                                     <div class="image-project">
-                                        <img class="project-img" src="{{ asset('storage/' . $project->media_files) }}"
-                                            alt="Profile Picture" class="img-fluid rounded-circle">
+
+                                        @if ($project->media_files)
+                                            <img class="project-img"
+                                                src="{{ asset('storage/' . $project->media_files) }}"
+                                                alt="Profile Picture" class="img-fluid rounded-circle">
+                                        @else
+                                        @endif
                                     </div>
                                 </div>
 

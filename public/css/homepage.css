@@ -112,7 +112,7 @@ img.link-href {
 
 .back {
     display: flex;
-    justify-content: center; /* Memposisikan link di tengah parent div */
+ /* Memposisikan link di tengah parent div */
     margin-top: 20px; /* opsional */
 }
 
@@ -208,6 +208,35 @@ img.back-btn {
     position: sticky;
 }
 
+.dflex-title-new{
+    width: 100%;
+    font-size: 20px;
+    font-weight: 500;
+    margin: 5px;
+    background-color: #ff0090;
+    display: flex; 
+    justify-content: space-between;
+    align-items: baseline;
+    position: sticky;
+}
+
+.img-posts {
+    width: 300px;
+    height: max-content;
+    gap: 5px;
+    display: flex;
+    flex-wrap: wrap;
+   
+
+}
+
+img.img-daily-posts{
+    width: 145px;
+    height: 145px;
+     border: 0.4px solid gray;
+}
+
+
 .title {
       width: 100%;
     display: block;
@@ -223,7 +252,7 @@ h5.card-title{
 }
 
 .card-post {
-    height: inherit;
+    height: 500px;
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -275,6 +304,10 @@ hr.hr-post{
     align-items: center;
 }
 
+.projects-title-display{
+    align-items: center;
+}
+
 .main-title{
     display: block;
 }
@@ -295,8 +328,35 @@ img.project-img {
     height: 150px;
 }
 
+
+.image-project {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+img.project-img-show {
+    width: 100%;
+    height: 300px;
+}
+
+.container-center {
+    width: 100%;
+    display: block;
+    justify-content: center;
+    text-align: center;
+}
+
 h5.title-project{
-     width: 100%;
+     width: 90%;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom:8px;
+    margin-top: 0;
+}
+
+
+h5.title-project-display{
+    width: 100%;
     font-size: 20px;
     font-weight: 500;
     margin-bottom:8px;
@@ -316,9 +376,33 @@ p.description{
     text-overflow: ellipsis;
 }
 
+p.description-display{
+    width: 100%;
+    font-size: 14px;
+    margin: 10px 0 10px 0;
+    height: max-content;
+    font-weight: 400;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 p.project_date{
     font-size:12px;
     color: gray;
+}
+
+.project-date-display{
+    font-size:13px;
+    color: rgb(0, 0, 0);
+    justify-content: center;
+    margin-bottom: 15px;
+
+}
+
+p.project-title {
+    font-size: 20px;
+    color: black;
+    margin: 0;
 }
 
 .wrap-content{
@@ -411,6 +495,12 @@ span.opinion {
     font-weight: 800;
 }
 
+
+p.tools_software{
+    margin: 4px 0 0 0 ;
+    font-size: 12px;
+
+}
 
 /* END */
 
@@ -573,16 +663,24 @@ span.industry {
     }
 
     
+    
 .title-content h1 {
     font-size: 20px;
 }
     
 
     img.project-img {
-        width: 100px;
+        width: 100%;
         height: 100px;
+
     }
-    
+
+    img.project-img-show {
+        width: 100%;
+    }
+
+  
+
     h5.title-project{
         width: 100%;
         font-size: 15px;
@@ -591,7 +689,7 @@ span.industry {
     }
     
     p.description{
-        width: 15rem;
+        width: 100%;
         font-size: 13px;
         margin: 8px 0 10px 0;
         height: max-content;
@@ -604,7 +702,7 @@ span.industry {
     }
     .projects-title{
         padding: 5px;
-        gap: 2rem;
+
     }
 
     .category span{
@@ -623,7 +721,7 @@ span.industry {
     }
 
    .card-post {
-    height: inherit;
+    height: 400px;
     overflow-y: auto;
     overflow-x: hidden;
    }

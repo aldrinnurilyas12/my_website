@@ -77,6 +77,13 @@
                                     </textarea>
                         </div>
 
+
+                        <div class="form-group">
+                            <label><strong>Upload media</strong></label>
+                            <input name="posts_img[]" type="file" class="form-control" multiple required>
+                            </input>
+                        </div>
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

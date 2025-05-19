@@ -13,13 +13,16 @@ class ProjectsModel extends Model
 
     protected $fillable = [
         'project_name',
+        'project_code',
         'description',
         'category_id',
         'github_link',
+        'demo_project_link',
         'start_date',
         'end_date',
         'project_status',
-        'tools'
+        'tools',
+        'contributors'
 
     ];
 }

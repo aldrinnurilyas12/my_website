@@ -72,5 +72,7 @@ Route::get('/sharingbooks', function () {
 Route::apiResource('aldrinnurilyas', App\Http\Controllers\HomepageController::class);
 
 Route::get('/myprojects', [App\Http\Controllers\ProjectsController::class, 'showproject'])->name('myprojects');
+Route::get('displayproject/{project_code}', [App\Http\Controllers\ProjectsController::class, 'displayproject'])->name('displayproject');
+
 Route::get('myworking', [App\Http\Controllers\WorkingExperience::class, 'mywork'])->name('myworking');
 Route::get('/posts', [App\Http\Controllers\DailyPostController::class, 'showpost'])->name('posts');

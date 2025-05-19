@@ -81,6 +81,17 @@
                                                             <div class="jobdesc-content">
 
                                                                 <p class="jobdesc-p">
+                                                                    @php
+                                                                        $description = $work->job_description;
+                                                                        $job_desc = array_filter(
+                                                                            array_map(
+                                                                                'trim',
+                                                                                explode('.', $description),
+                                                                            ),
+                                                                        );
+                                                                    @endphp
+
+
                                                                     @foreach ($job_desc as $item)
                                                                         <li>{{ $item }}.</li>
                                                                     @endforeach
@@ -90,42 +101,57 @@
 
                                                             </div>
 
-                                                            <span class="title-achievement">Achievement :</span>
+                                                            @if ($work->achievement)
+                                                                <span class="title-achievement">Achievement :</span>
 
-                                                            <div class="jobdesc-content">
+                                                                <div class="jobdesc-content">
 
-                                                                <p class="jobdesc-p">
-                                                                    @if ($work->achievement == null)
-                                                                        -
-                                                                    @else
-                                                                        @foreach ($achive as $item)
-                                                                            <li>{{ $item }}.</li>
-                                                                        @endforeach
-                                                                    @endif
+                                                                    <p class="jobdesc-p">
 
-                                                                </p>
-
-
-                                                            </div>
-
-                                                            <span class="title-achievement">Tools/Software yang
-                                                                digunakan :</span>
-
-                                                            <div class="jobdesc-content">
-
-                                                                <p class="jobdesc-p">
-                                                                    @if ($work->software_tools == null)
-                                                                        -
-                                                                    @else
-                                                                        @foreach ($software_tools as $item)
-                                                                            <li>{{ $item }}.</li>
-                                                                        @endforeach
-                                                                    @endif
-
-                                                                </p>
+                                                                        @php
+                                                                            $achievements = $work->achievement;
+                                                                            $achieve = array_filter(
+                                                                                array_map(
+                                                                                    'trim',
+                                                                                    explode('.', $achievements),
+                                                                                ),
+                                                                            );
+                                                                        @endphp
 
 
-                                                            </div>
+                                                                        @if ($work->achievement == null)
+                                                                            -
+                                                                        @else
+                                                                            @foreach ($achieve as $item)
+                                                                                <li>{{ $item }}.</li>
+                                                                            @endforeach
+                                                                        @endif
+
+                                                                    </p>
+                                                                </div>
+                                                            @else
+                                                            @endif
+
+
+                                                            @if ($work->software_tools)
+                                                                <span class="title-achievement">Tools/Software yang
+                                                                    digunakan :</span>
+
+                                                                <div class="jobdesc-content">
+
+                                                                    <p class="tools_software">
+                                                                        @if ($work->software_tools == null)
+                                                                            -
+                                                                        @else
+                                                                            {{ $work->software_tools }}
+                                                                        @endif
+
+                                                                    </p>
+
+
+                                                                </div>
+                                                            @else
+                                                            @endif
 
                                                         </div>
 
