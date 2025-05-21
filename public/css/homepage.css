@@ -114,6 +114,7 @@ img.link-href {
     display: flex;
  /* Memposisikan link di tengah parent div */
     margin-top: 20px; /* opsional */
+    justify-content: center;
 }
 
 .back a {
@@ -257,6 +258,18 @@ h5.card-title{
     overflow-x: hidden;
 }
 
+.card-post-project {
+    height: 500px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.card-post-podcast {
+    height: 500px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+
 .content-wrap {
     height: 25em;
 
@@ -266,7 +279,8 @@ p.text-post{
     font-size: 15px;
     margin: 8px 0 10px 0;
     height: max-content;
-    font-weight: 400;;
+    font-weight: 400;
+    overflow-x: auto;
 }
 
 hr.hr-post{
@@ -304,6 +318,17 @@ hr.hr-post{
     align-items: center;
 }
 
+.podcast-title{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content:start;
+    align-items: center;
+    background-color: white;
+    padding: 8px;
+    border-radius: 10px;
+}
+
 .projects-title-display{
     align-items: center;
 }
@@ -334,6 +359,20 @@ img.project-img {
     justify-content: center;
     margin-bottom: 20px;
 }
+
+.image-podcast {
+    display: flex;
+    justify-content: center;
+
+}
+
+img.podcast-img {
+   width: 100px;
+   height: 100px;
+   border-radius: 10px;
+}
+
+
 img.project-img-show {
     width: 100%;
     height: 300px;
@@ -349,7 +388,7 @@ img.project-img-show {
 h5.title-project{
      width: 90%;
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 600;
     margin-bottom:8px;
     margin-top: 0;
 }
@@ -358,7 +397,7 @@ h5.title-project{
 h5.title-project-display{
     width: 100%;
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 600;
     margin-bottom:8px;
     margin-top: 0;
 }
@@ -533,6 +572,15 @@ p.tools_software{
     justify-content: center;
 }
 
+.dot_now {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #a0a0a0;
+    display: flex;
+    justify-content: center;
+}
+
 .dot-content {
     display: flex;
     justify-content: center;
@@ -549,7 +597,7 @@ p.tools_software{
 
 .vertical-list {
     display: block;
-    margin-bottom:20px;
+    
 }
 
 p.jobdesc-p {
@@ -662,16 +710,40 @@ span.industry {
     text-align: left;
     }
 
-    
-    
-.title-content h1 {
-    font-size: 20px;
+    p.text-post{
+        width: 250px;
+    font-size: 14px;
+    margin: 8px 0 10px 0;
+    height: max-content;
+    font-weight: 400;
+    overflow: auto;
+    }
+
+   img.img-daily-posts{
+    width: 138px;
+    height: 145px;
+     border: 0.4px solid gray;
 }
     
+    .title-content h1 {
+        font-size: 20px;
+    }
+        
+
+   h5.card-title {
+    font-size: 15px;
+    font-weight: 700;
+   }
+   .title-time{
+    display: block;
+    gap: 2px;
+}
+
+   
 
     img.project-img {
-        width: 100%;
-        height: 100px;
+        width: 300px;
+        height: 200px;
 
     }
 
@@ -684,7 +756,7 @@ span.industry {
     h5.title-project{
         width: 100%;
         font-size: 15px;
-        font-weight: 500;
+        font-weight: 600;
         margin-bottom: 5px;
     }
     
@@ -720,11 +792,28 @@ span.industry {
         margin: 8px 0 0 0 ;
     }
 
+    .dotted{
+        display: none;
+    }
+
    .card-post {
-    height: 400px;
+    height: 390px;
     overflow-y: auto;
     overflow-x: hidden;
    }
+
+   .card-post-project {
+    height: 450px;
+    overflow-y: auto;
+    overflow-x: hidden;
+   }
+
+.card-post-podcast {
+    height: 500px;
+    overflow-y: auto;
+    overflow-x: hidden;
+   }
+
 
    img.img-books {
     width:200px;

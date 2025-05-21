@@ -40,11 +40,11 @@ class DailyPostController extends Controller
             'post' => 'required'
         ]);
 
-        DailyPostModel::create([
-            'post' => $request->post
-        ]);
 
         if ($request->hasFile('posts_img')) {
+            DailyPostModel::create([
+                'post' => $request->post
+            ]);
             foreach ($request->file('posts_img') as $img) {
                 $folderPath = 'posts_img';
                 $imagePath = $img->storeAs($folderPath, uniqid() . '.' . $img->getClientOriginalExtension(), 'public');
@@ -138,24 +138,31 @@ class DailyPostController extends Controller
     /**
      * Remove the specified resource from storage.
      */
+
+
     public function destroy(string $id)
     {
         $post = DailyPostModel::find($id);
-
-        $daily_posts_img = Daily_posts_images::where('posts_id', $id)->firstOrFail();
+        $dailyPostsImage = Daily_posts_images::where('posts_id', $id)->first();
 
         if ($post) {
-            $post->delete();
-            if ($daily_posts_img->posts_img) {
-                $oldImages = public_path('storage/' . $daily_posts_img->posts_img);
-                if (file_exists($oldImages)) {
-                    unlink($oldImages);
+            // Hapus gambar jika ada
+            if ($dailyPostsImage && $dailyPostsImage->posts_img) {
+                $imagePath = public_path('storage/' . $dailyPostsImage->posts_img);
+                if (file_exists($imagePath)) {
+                    unlink($imagePath);
                 }
+                $dailyPostsImage->delete(); // opsional, jika ingin menghapus record-nya juga
             }
+
+            // Hapus postingan
+            $post->delete();
+
             session()->flash('message_success', 'Berhasil menghapus postingan anda');
-            return redirect()->back();
         } else {
-            session()->flash('error', 'Postingan tidak ditemukan');
+            session()->flash('message_error', 'Postingan tidak ditemukan');
         }
+
+        return redirect()->back();
     }
 }

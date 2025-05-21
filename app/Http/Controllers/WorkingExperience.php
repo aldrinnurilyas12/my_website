@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\WorkingExperienceModel;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
+use Symfony\Component\Console\Input\Input;
 
 class WorkingExperience extends Controller
 {
@@ -47,19 +48,33 @@ class WorkingExperience extends Controller
             'industry' => 'required',
             'start_date' => 'required',
             'job_description' => 'required',
-            'software_tools.*' => 'string'
+            'software_tools.*' => 'nullable|string'
         ]);
 
-        WorkingExperienceModel::create([
-            'company_name' => $request->company_name,
-            'position' => $request->position,
-            'industry'  => $request->industry,
-            'job_description' => $request->job_description,
-            'achievement' => $request->achievement,
-            'software_tools' => implode(', ', $request->software_tools),
-            'start_date' => $request->start_date,
-            'end_date' => $request->end_date
-        ]);
+        if ($request->input('software_tools') == null) {
+            WorkingExperienceModel::create([
+                'company_name' => $request->company_name,
+                'position' => $request->position,
+                'industry'  => $request->industry,
+                'job_description' => $request->job_description,
+                'achievement' => $request->achievement,
+                'software_tools' => null,
+                'start_date' => $request->start_date,
+                'end_date' => $request->end_date
+            ]);
+        } else {
+            WorkingExperienceModel::create([
+                'company_name' => $request->company_name,
+                'position' => $request->position,
+                'industry'  => $request->industry,
+                'job_description' => $request->job_description,
+                'achievement' => $request->achievement,
+                'software_tools' => implode(', ', $request->software_tools),
+                'start_date' => $request->start_date,
+                'end_date' => $request->end_date
+            ]);
+        }
+
 
         session()->flash('message_success', 'Berhasil menambahkan pengalaman kerja anda');
         return redirect()->back();
@@ -67,7 +82,7 @@ class WorkingExperience extends Controller
 
     public function mywork()
     {
-        $working = DB::table('work_view')->orderBy('created_at', 'desc')->get();
+        $working = DB::table('work_view')->orderBy('end_date', 'asc')->get();
 
         return view('frontend.workingexperience.working', compact('working'));
     }

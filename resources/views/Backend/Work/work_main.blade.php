@@ -207,7 +207,20 @@
                             </div>
 
                             <div class="form-group">
+                                <label><strong>Tools/Sotware saat ini:</strong></label>
+                                <br>
+                                @if ($work->tools)
+                                    <span>{{ $work->tools }}</span>
+                                @else
+                                    -
+                                @endif
+                            </div>
+
+                            <div class="form-group">
                                 <label><strong>Tools/Sotware yang digunakan</strong> (optional)</label>
+                                <br>
+                                <span style="font-size: 12px; color:red; font-style:italic;">*pilih kembali jika ingin
+                                    mengubah tools</span>
                                 <div class="checkbox-tools">
                                     @foreach ($software_tools as $tool)
                                         <div class="form-check">

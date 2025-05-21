@@ -210,6 +210,7 @@
                                     class="form-control" type="text">
                             </div>
 
+
                             <div class="form-group">
                                 <label><strong>Kategori Project</strong></label>
                                 <select class="form-control" name="category_id" id="">
@@ -224,7 +225,15 @@
 
 
                             <div class="form-group">
+                                <label><strong>Tools/Sotware saat ini:</strong></label>
+                                <br>
+                                <span>{{ $project->tools }}</span>
+                            </div>
+
+                            <div class="form-group">
                                 <label><strong>Tools/Sotware yang digunakan</strong></label>
+                                <span style="font-size: 12px; color:red; font-style:italic;">*pilih kembali jika ingin
+                                    mengubah tools</span>
                                 <div class="checkbox-tools">
                                     @foreach ($tools as $tool)
                                         <div class="form-check">

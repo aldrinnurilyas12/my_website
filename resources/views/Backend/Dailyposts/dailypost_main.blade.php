@@ -80,7 +80,7 @@
 
                         <div class="form-group">
                             <label><strong>Upload media</strong></label>
-                            <input name="posts_img[]" type="file" class="form-control" multiple required>
+                            <input name="posts_img[]" type="file" class="form-control" multiple>
                             </input>
                         </div>
 

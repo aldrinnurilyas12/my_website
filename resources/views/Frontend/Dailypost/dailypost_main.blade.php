@@ -119,13 +119,22 @@
                             <div id="table-detail" class="table-responsive">
                                 <div class="card-post">
                                     <div class="img-content-post">
-                                        @foreach ($all_images_show as $item)
-                                            <a href="#" data-toggle="modal"
-                                                data-target="#showImages{{ $item->img_id }}">
-                                                <img class="img-daily-posts"
-                                                    src="{{ asset('storage/' . $item->posts_img) }}" alt="">
-                                            </a>
-                                        @endforeach
+                                        @if ($all_images_show->isEmpty())
+                                            <div class="container-fluid px-4">
+                                                <div class="alert">
+                                                    Belum ada media saat ini
+                                                </div>
+
+                                            </div>
+                                        @else
+                                            @foreach ($all_images_show as $item)
+                                                <a href="#" data-toggle="modal"
+                                                    data-target="#showImages{{ $item->img_id }}">
+                                                    <img class="img-daily-posts"
+                                                        src="{{ asset('storage/' . $item->posts_img) }}" alt="">
+                                                </a>
+                                            @endforeach
+                                        @endif
                                     </div>
                                 </div>
                             </div>

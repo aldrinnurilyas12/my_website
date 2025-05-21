@@ -59,7 +59,7 @@
                                         src="{{ asset('icon/arrowup.png') }}" title=""></a></li>
                             <li><a href="{{ route('posts') }}">Daily Post <img class="link-href"
                                         src="{{ asset('icon/arrowup.png') }}" title=""></a></li>
-                            <li><a href="{{ url('certification') }}">Podcast <img class="link-href"
+                            <li><a href="{{ url('mypodcast') }}">Podcast <img class="link-href"
                                         src="{{ asset('icon/arrowup.png') }}" title=""></a></li>
 
                         </ul>

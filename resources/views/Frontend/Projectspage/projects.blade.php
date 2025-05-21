@@ -39,7 +39,7 @@
 
 
             <div class="content-wrap">
-                <div class="card-post">
+                <div class="card-post-project">
                     @if ($projects->isEmpty())
                         <div class="container-fluid px-4">
                             <div class="alert">

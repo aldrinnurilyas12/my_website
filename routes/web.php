@@ -37,6 +37,10 @@ Route::middleware('auth')->group(function () {
     Route::apiResource('profilepictures', App\Http\Controllers\ProfilePictureController::class);
     Route::put('profile_update/{id}', [App\Http\Controllers\ProfilePictureController::class, 'update'])->name('profile_update');
     Route::delete('profile_delete/{id}', [App\Http\Controllers\ProfilePictureController::class, 'destroy'])->name('profile_delete');
+
+    Route::apiResource('podcast', App\Http\Controllers\PodcastController::class);
+    Route::put('podcast_update/{id}', [App\Http\Controllers\PodcastController::class, 'update'])->name('podcast_update');
+    Route::delete('podcast_delete/{id}', [App\Http\Controllers\PodcastController::class, 'destroy'])->name('podcast_delete');
 });
 
 require __DIR__ . '/auth.php';
@@ -76,3 +80,5 @@ Route::get('displayproject/{project_code}', [App\Http\Controllers\ProjectsContro
 
 Route::get('myworking', [App\Http\Controllers\WorkingExperience::class, 'mywork'])->name('myworking');
 Route::get('/posts', [App\Http\Controllers\DailyPostController::class, 'showpost'])->name('posts');
+
+Route::get('mypodcast', [App\Http\Controllers\PodcastController::class, 'showpodcast'])->name('mypodcast');

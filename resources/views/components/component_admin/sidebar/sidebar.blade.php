@@ -25,7 +25,7 @@
                             Work Experience
                         </a>
 
-                        <a class="nav-link" href="{{ route('workingexperiences.index') }}">
+                        <a class="nav-link" href="{{ route('podcast.index') }}">
                             <div class="sb-nav-link-icon"><i class="fa fa-id-card" aria-hidden="true"></i>
                             </div>
                             Podcast
